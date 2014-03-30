@@ -8,7 +8,8 @@ function polling_walkscore(milliseconds) {
       var long = coords.longiute;
       var testUrl = "http://unispon.com/hackduke/index.php/sepp/walkscore/?lat=" + lat + "&long=" + long;
       ajax({ url: testUrl, type: 'json' }, function(data) {
-          simply.text({ title: "Walkscore:" + data.walkscore , subtitle: data.message });
+          simply.text({ title: "Walkscore: " + data.walkscore , subtitle: data.message });
+          //simply.style(mono);
           if (data.workscore > 50) {
               simply.vibe('short');
           }
